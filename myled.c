@@ -20,10 +20,22 @@ static ssize_t led_write(struct file* filp, const char*buf, size_t count, loff_t
 	printk(KERN_INFO "receive %c\n", c);
 	return 1;
 }
+static ssize_t sushi_read(struct file* file, char* buf, size_t count, loff_t* pos)
+{
+	int size = 0;
+	char sushi[] ={'s','u','s','h','i',0x0A};
+	if(copy_to_user(buf+size, (const char *)sushi,sizeof(sushi))){
+		printk( KERN_INFO "sushi : copy_to_user failed\n" );
+		return -EFAULT;
+	}
+	size += sizeof(sushi);
+	return size;
+}
 
 static struct file_operations led_fops = {
 	.owner = THIS_MODULE,
-	.write = led_write
+	.write = led_write,
+	.read = sushi_read
 };
 
 
