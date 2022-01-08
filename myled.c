@@ -1,3 +1,7 @@
+//SPDX-License-Identifier:GPL-2.0
+//*Copyright(c)2021 Ryuich Ueda. All rights reserved.
+//*Copyright(c)2021 Yusuke Nagano. All rights reserved.
+
 #include <linux/module.h>
 #include<linux/fs.h>
 #include<linux/cdev.h>
@@ -73,7 +77,7 @@ static int __init init_mod(void)
 	}
 	device_create(cls, NULL, dev, NULL, "myled%d", MINOR(dev));
 	
-	gpio_base = ioremap_nocache(0x3f200000, 0xA0);
+	gpio_base = ioremap_nocache(0xfe200000, 0xA0);
 	const u32 led = 25;
 	const u32 index = led/10;//GPFSEL2
 	const u32 shift = (led%10)*3;//15bitdesu
