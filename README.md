@@ -16,12 +16,17 @@
 # 繋ぎ方
 
 # 実行方法
-｀｀｀
+ ```   
 sudo insmod myled.ko
-｀｀｀
+```
+```
 sudo chmod 666 /dev/myled0
-｀｀｀
+```
 ### LEDを点灯
+```
 echo 1 > /dev/myled0
+```
 ### LEDを消灯
+```
 echo 0 > /dev/myled0
+```
