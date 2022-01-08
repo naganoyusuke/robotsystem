@@ -9,9 +9,13 @@
 ・Raspberry Pi 4(ubuntu os)
 #　今回使用したもの
 ・Raspberry Pi 4
+
 ・LANケーブル
+
 ・抵抗　240Ω 別名:炭素皮膜抵抗 　誤差+-5%
+
 ・LED(発光ダイオード）　3.6V
+
 ・圧電ブザー　
 # 繋ぎ方
 
