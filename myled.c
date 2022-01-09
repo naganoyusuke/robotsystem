@@ -8,6 +8,8 @@
 #include<linux/device.h>
 #include<linux/uaccess.h>
 #include<linux/io.h>
+#include<linux/time.h>
+
 MODULE_AUTHOR("Ryuichi Ueda and Yusuke Nagano");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
@@ -26,12 +28,15 @@ static ssize_t led_write(struct file* filp, const char*buf, size_t count, loff_t
 	return -EFAULT;
 //	printk(KERN_INFO "receive %c\n", c);
 	if(c =='0'){
+		gpio_base[10] = 1 << 24;
 		gpio_base[10] = 1 << 25;
 	}else if (c == '1'){
-		gpio_base[7] =1 << 25;
+		gpio_base[7] = 1 << 24;
+		gpio_base[7] = 1 << 25;
+
 	}
-
-
+	
+	
 	return 1;
 }
 static ssize_t sushi_read(struct file* file, char* buf, size_t count, loff_t* pos)
@@ -79,10 +84,15 @@ static int __init init_mod(void)
 	
 	gpio_base = ioremap_nocache(0xfe200000, 0xA0);
 	const u32 led = 25;
+	const u32 buzzer = 24;
 	const u32 index = led/10;//GPFSEL2
+	const u32 index2 = buzzer/10;//GPFSEL2
 	const u32 shift = (led%10)*3;//15bitdesu
+	const u32 shift2 = (buzzer%10)*3;//15bitdesu
 	const u32 mask = ~(0x7 << shift);//1111111111111111000111111111111111
+	const u32 mask2 = ~(0x7 << shift2);//1111111111111111000111111111111111
 	gpio_base[index] = (gpio_base[index] & mask) | (0x1 << shift);//001; output flag
+	gpio_base[index2] = (gpio_base[index2] & mask2) | (0x1 << shift2);//001; output flag
 	//1111111111111001111111111111111
 
        return 0;
