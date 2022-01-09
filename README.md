@@ -18,6 +18,8 @@
 
 ・圧電ブザー　
 # 繋ぎ方
+![S__79945764](https://user-images.githubusercontent.com/72643479/148679855-3a873c8a-5b39-47b1-bcde-5a10ebb6dfe4.jpg)
+![S__79945766](https://user-images.githubusercontent.com/72643479/148679864-ecf0f323-04a8-48c1-9c73-31ed808a85de.jpg)
 
 # 実行方法
  ```   
