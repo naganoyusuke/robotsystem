@@ -38,8 +38,8 @@ echo 1 > /dev/myled0
 echo 0 > /dev/myled0
 ```
 # ライセンス
-Copyright (c) 2022 Ryuich Ueda
-Copyright (c) 2022 Yusuke Nagano
+Copyright (c) 2022 Ryuich Ueda.All rights reserved.
+Copyright (c) 2022 Yusuke Nagano.All rights reserved.
 
 > This program is free software; you can redistribute it and/or
 > modify it under the terms of the GNU General Public License
