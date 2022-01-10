@@ -2,7 +2,7 @@
 # Robot system report1
 
 # リポジトリの説明
-課題１リポジトリです。
+課題１　GPIO25ピンとGPIO24ピンを使い、LED2つと電子ブザーを同時に鳴らすリポジトリです。
 # 開発環境の説明
 ・ubuntu20.04
 
@@ -38,12 +38,13 @@ echo 1 > /dev/myled0
 echo 0 > /dev/myled0
 ```
 # ライセンス
-Copyright (c) 2021 Ryuich Ueda
+Copyright (c) 2022 Ryuich Ueda
+Copyright (c) 2022 Yusuke Nagano
 
 > This program is free software; you can redistribute it and/or
 > modify it under the terms of the GNU General Public License
 > as published by the Free Software Foundation; either version 2
-> of the License, or any later version.
+> of the License.
 
 > This program is distributed in the hope that it will be useful,
 > but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -51,5 +52,4 @@ Copyright (c) 2021 Ryuich Ueda
 > GNU General Public License for more details.
 
 > You should have received a copy of the GNU General Public License
-> along with this program. If not, see http://www.gnu.org/licenses/.
-
+> along with this program. If not, see https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
